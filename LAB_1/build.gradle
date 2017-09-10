@@ -12,9 +12,3 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-
-task{
-    doLast{
-        println 'Hello World'
-    }
-}
