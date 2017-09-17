@@ -1,14 +1,40 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import jdk.internal.util.xml.impl.Input;
+
+import java.util.*;
 
 public class WorkWithArray {
     public static void main(String []args)
     {
-        int [] arrayNumbers = generateData(10);
+        Scanner inputText = new Scanner(System.in);
+        int size = 0;
+        sizeStart : do {
+            System.out.printf("\n Введите размер масива: \n");
+            try{
+                size = inputText.nextInt();
+            } catch (Exception e){
+                System.out.printf("\n Спробуй еще раз....)");
+                inputText = new Scanner(System.in);
+                continue sizeStart;
+            }
+        }while (size == 0);
+
+        int [] arrayNumbers = new int [size];
+        int index = 0;
+      start:  do {
+            System.out.printf("\n Введите %s елемент масива: ", index);
+            try{
+                arrayNumbers[index] = inputText.nextInt();
+            } catch (Exception e){
+                System.out.printf("\n Спробуй еще раз....)");
+                inputText = new Scanner(System.in);
+                continue start;
+            }
+            index++;
+            }while(index != size);
+
+
         System.out.printf("TASK 1 \n");
-        System.out.printf("Paired number : %s \n", pairedNumber(arrayNumbers));
+        System.out.printf("Paired number : %s \n", pairedNumber2(arrayNumbers));
         System.out.printf("Sum of the elements multiplied by 3 : %s \n", SumMultipliedElements(arrayNumbers));
         System.out.printf("Difference between the maximum and the minimum elements array : %s \n", DifferenceMaxMin(arrayNumbers));
         System.out.printf("Arithmetic mean of the array : %s \n", ArithmeticMeanArray(arrayNumbers));
@@ -17,7 +43,18 @@ public class WorkWithArray {
         Arrays.sort(arrayNumbers);
         System.out.printf("Array : %s", Arrays.toString(arrayNumbers));
 
-        int [][] sqArrayNumbers = generateSquareArray(10);
+        size = 0;
+        sizeStart : do {
+            System.out.printf("\n Введите размер квадратного масива: \n");
+            try{
+                size = inputText.nextInt();
+            } catch (Exception e){
+                System.out.printf("\n Спробуй еще раз....)");
+                inputText = new Scanner(System.in);
+                continue sizeStart;
+            }
+        }while (size == 0);
+        int [][] sqArrayNumbers = generateSquareArray(size);
         System.out.printf("\n TASK 2 \n");
 
         WorkWithArray.showSquareArray(sqArrayNumbers);
@@ -55,11 +92,29 @@ public class WorkWithArray {
             return 0;
     }
 
+    public static int pairedNumber2(int [] randomNumbers){ // метод которий повертает парние числа в масиве
+        if (randomNumbers.length > 0){
+            int pairedNumbers = 0;
+            Arrays.sort(randomNumbers);
+            int arrayLength = randomNumbers.length;
+            for (int i = 0; i < arrayLength-1; i++)
+                for(int j = i+1; j < arrayLength; j++ )
+                if (randomNumbers[i] == randomNumbers[j]){
+                    pairedNumbers++;
+                    break;
+            }
+            return pairedNumbers;
+        }
+        else
+            return 0;
+    }
+
+
     public static int SumMultipliedElements(int [] randomNumbers){ // сума елементов умноженых на три
         if (randomNumbers.length > 0){
             int sumMultipliedEl = 0;
-            int lenthArray = randomNumbers.length;
-            for (int i = 0; i < lenthArray; i++)
+            int lengthArray = randomNumbers.length;
+            for (int i = 0; i < lengthArray; i++)
                 if (randomNumbers[i] % 3 == 0)
                     sumMultipliedEl += randomNumbers[i];
             return  sumMultipliedEl;
