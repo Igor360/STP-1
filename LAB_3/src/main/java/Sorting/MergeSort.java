@@ -1,10 +1,17 @@
 package Sorting;
 
-public class MergeSort { // it is lib
-    private static int[] array;
-    private static int[] tempMergArr;
-    private static int length;
+/**
+ *  it is class who realize merge sorting
+ */
+public class MergeSort {
+    private static int[] array;  // our array
+    private static int[] tempMergArr; // time array
+    private static int length; // size array
 
+    /**
+     * method who sort our array using merge sort
+     * @param inputArr the array who will be sorting
+     */
     public static void sort(int inputArr[]) {
         array = inputArr;
         length = inputArr.length;
@@ -12,6 +19,11 @@ public class MergeSort { // it is lib
         doMergeSort(0, length - 1);
     }
 
+    /**
+     * method who separate our array on parts then sorting data and merge two sorted arrays
+     * @param lowerIndex
+     * @param higherIndex
+     */
     private static void doMergeSort(int lowerIndex, int higherIndex) {
 
         if (lowerIndex < higherIndex) {
@@ -25,6 +37,12 @@ public class MergeSort { // it is lib
         }
     }
 
+    /**
+     * method who merge parts
+     * @param lowerIndex
+     * @param middle
+     * @param higherIndex
+     */
     private static void mergeParts(int lowerIndex, int middle, int higherIndex) {
 
         for (int i = lowerIndex; i <= higherIndex; i++) {

@@ -3,71 +3,84 @@ package Sorting;
 import java.util.Arrays;
 import java.util.Random;
 
-public class GeneratedData { // create generic class
-
+/**
+ * it is class who generate array
+ */
+public class GeneratedData {
     private int arraySize;
-    private int []arrayElements = null; // create generic array using class arraylist
+    private int []arrayElements = null; // array elements
     private Random generatorElements = new Random(); // create object
-
     private int [] arrayCopy = null;
 
+    /**
+     *
+     * @return size array
+     */
     public int getSize() { // get size array
         return arraySize;
     }
+
+    /**
+     *
+     * @return array
+     */
     public int[] getArray() { return arrayElements; }
 
-    public GeneratedData(int size){ // constructor
+    /**
+     * initialize array
+     * class constructor
+     * @param size array
+     */
+    public GeneratedData(int size){
         this.arraySize = size;
         arrayElements = new int[size];
-        arrayCopy = new int[size];
         generateArray(); // after create array, generate him
     }
 
+    /**
+     * populating an array with random data
+     */
     public void generateArray(){ // method whose addition data to our array
         int generatedNumber = 0;
         for (int i = 0; i < this.arraySize; i++){
-            generatedNumber = generatorElements.nextInt(10);
+            generatedNumber = generatorElements.nextInt();
             arrayElements[i] = generatedNumber;
-            arrayCopy[i] = generatedNumber;
         }
+        arrayCopy = arrayElements.clone();
     }
 
+    /**
+     * method who return all changes to default values
+     */
     public void resetData(){ // repair default data
         arrayElements = arrayCopy;
     }
-    // create indexer
-    public int getElement(int position){ //  get element by his index
+
+    /**
+     * method who return element array using her index
+     * @param position - position element
+     * @return  retun element using her position
+     */
+
+    public int getElement(int position){
         return arrayElements[position];
     }
-    public void setElement(int position, int newData){ // change element using his index
+
+    /**
+     * set data for element in array
+     * @param position element
+     * @param newData new value array element
+     */
+    public void setElement(int position, int newData){
         arrayElements[position] = newData;
     }
 
+    /**
+     * method who print the value to the console
+     */
     public void showArray(){ // method whose showing array data
         System.out.printf("Array: %s \n", Arrays.toString(arrayElements));
     }
 
-    public boolean comparisonTwoNumbers(int indexFirstElement, int indexSecondElement, String operation) { // method whose compare two numbers
-        switch (operation){
-            case ">":
-                return arrayElements[indexFirstElement] > arrayElements [indexSecondElement] ? true : false;
-
-            case "<":
-                return arrayElements[indexFirstElement] < arrayElements[indexSecondElement] ? true : false;
-
-            case ">=":
-                return arrayElements[indexFirstElement] >= arrayElements[indexSecondElement] ? true : false;
-
-            case "<=":
-                return arrayElements[indexFirstElement] <= arrayElements[indexSecondElement] ? true : false;
-
-            case  "==":
-                return arrayElements[indexFirstElement] == arrayElements[indexSecondElement] ? true : false;
-
-            default:
-                return false;
-
-        }
-    }
 
 }

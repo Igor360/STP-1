@@ -187,13 +187,13 @@ public class WorkWithArray {
 
     public static int[][] generateSquareArray(int size){ // генерация квадратного масива
         Random randomNumber = new Random();
-      //  int from = -10;
-      //  int to = 100;
+        int from = -10;
+        int to = 100;
         int [][] randomNumbers = new int [size][size];
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++) {
-                //randomNumbers[i][j] = from + (int) (Math.random() * to);
-                randomNumbers[i][j] = randomNumber.nextInt();
+                randomNumbers[i][j] = from + (int) (Math.random() * to);
+                //randomNumbers[i][j] = randomNumber.nextInt();
         }
         return randomNumbers;
     }

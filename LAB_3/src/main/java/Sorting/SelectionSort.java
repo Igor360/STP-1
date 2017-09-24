@@ -1,19 +1,27 @@
 package Sorting;
 
+/**
+ * it is class who realize selection sorting
+ */
 public class SelectionSort {
-    public static void sort(GeneratedData arrayNumbers){ // method who sorting our array using selection sort
-        int size = arrayNumbers.getSize();
+
+    /**
+     * a method which sorts by exchanging a min element with an element of the first non-sorted position
+     * @param arrayNumbers
+     */
+    public static void sort(int[] arrayNumbers){
+        int size = arrayNumbers.length;
         int minValueIndex = 0;
         int timeValue = 0;
         for (int i = 0; i < size - 1; i++){
             minValueIndex = i;
             for (int j = i+1; j < size; j++){
-                if(arrayNumbers.comparisonTwoNumbers(j,minValueIndex,"<"))
+                if(arrayNumbers[j] < arrayNumbers[minValueIndex])
                     minValueIndex = j;
             }
-            timeValue = arrayNumbers.getElement(i);
-            arrayNumbers.setElement(i,arrayNumbers.getElement(minValueIndex));
-            arrayNumbers.setElement(minValueIndex,timeValue);
+            timeValue = arrayNumbers[i]; // get element from array
+            arrayNumbers[i] = arrayNumbers[minValueIndex]; //change next element
+            arrayNumbers[minValueIndex] = timeValue;
         }
     }
 }
