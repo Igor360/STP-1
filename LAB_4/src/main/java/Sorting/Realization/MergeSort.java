@@ -72,6 +72,11 @@ public class MergeSort {
 
     }
 
+
+    /**
+     * method who show array sorting time
+     * @param array
+     */
     public static void showTimeSorting(Array array){
         long start = 0, end = 0;
         start = System.nanoTime();

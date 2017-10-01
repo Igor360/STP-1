@@ -9,12 +9,20 @@ import array.task.answer.TASK2;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+/**
+ * it is class who show task answer
+ */
 public class ShowAnswer {
     private ShowAnswer (){}
     private static Array arrayNumbers = null;
     private static SquareArray sqArrayNumbers= null;
     private static Scanner inputText = new Scanner(System.in);
 
+
+    /**
+     * get data from console for generation array in task 1
+     */
     protected static void getDataForTASK1(){
         inputText = new Scanner(System.in);
         int size = 0;
@@ -44,6 +52,9 @@ public class ShowAnswer {
         }while(index < size);
     }
 
+    /**
+     * get data from console for generation square array in task 2
+     */
     protected static void getDataForTASK2(){
         int size = 0;
         do {
@@ -59,6 +70,9 @@ public class ShowAnswer {
         sqArrayNumbers = new SquareArray(size,size);
     }
 
+    /**
+     * show on screen answers on tasks
+     */
     public static void Show(){
         getDataForTASK1();
         System.out.printf("TASK 1 \n");

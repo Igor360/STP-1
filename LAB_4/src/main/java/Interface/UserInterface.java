@@ -221,14 +221,14 @@ public class UserInterface {
     public static String changeTimeFormat(long time){
         char [] textArray = Long.toString(time).toCharArray();
         int iter = 0;
-        String finalyTime = new String();
+        StringBuffer finalyTime = new StringBuffer();
         for (int i = textArray.length - 1; i >= 0; i--) {
-            finalyTime+= textArray[iter];
+            finalyTime.append(textArray[iter]);
             if (i%3 == 0)
-                finalyTime+=" ";
+                finalyTime.append(" ");
             iter++;
         }
-        return finalyTime;
+        return finalyTime.toString();
     }
 }
 

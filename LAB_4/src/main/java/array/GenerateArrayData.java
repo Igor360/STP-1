@@ -3,13 +3,21 @@ package array;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * class who generated data for array
+ */
 public class GenerateArrayData {
 
     private GenerateArrayData(){}
+    private static Random randomNumber = new Random();
 
+    /**
+     * generate data for array
+     * @param sizeArray
+     * @return
+     */
     public static int[] generateData(int sizeArray)
     {
-        Random randomNumber = new Random();
         int [] randomNumbers = new int [sizeArray];
         //  int from = -10;
         //  int to = 100;
@@ -21,8 +29,13 @@ public class GenerateArrayData {
     }
 
 
-    public static int[][] generateSquareArray(int row, int col){ // генерация квадратного масива
-        Random randomNumber = new Random();
+    /**
+     * generate data from square array
+     * @param row - rows
+     * @param col - column
+     * @return
+     */
+    public static int[][] generateSquareArray(int row, int col){
         int from = -10;
         int to = 100;
         int [][] randomNumbers = new int [row][col];

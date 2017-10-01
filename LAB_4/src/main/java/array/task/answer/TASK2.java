@@ -3,12 +3,19 @@ package array.task.answer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * класс из решениям задания 2
+ */
 public class TASK2 {
 
     private TASK2() {}
 
-    public static List<String> getSumBeforeNegativeEl(int [][] randomNumbers){ //  сумма элементов, расположенных за первым отрицательным элементом в i-й строке (если все элементы линии неотрицательны, возьмите bi = 100);
-
+    /**
+     *  сумма элементов, расположенных за первым отрицательным элементом в i-й строке (если все элементы линии неотрицательны, возьмите bi = 100)
+     * @param randomNumbers
+     * @return
+     */
+    public static List<String> getSumBeforeNegativeEl(int [][] randomNumbers){
         int row = randomNumbers.length;
         int col = randomNumbers[0].length;
         int positionNegativeEl = 0;
@@ -39,7 +46,12 @@ public class TASK2 {
         return SumBeforeNegativeEl;
     }
 
-    public static List<String> getSumAfterNegativeEl(int [][] randomNumbers){ // б) сумма элементов, предшествующих последнему отрицательному элементу i-й линии (если все элементы линии неотрицательны, то возьмем bi = -l);
+    /**
+     * сумма элементов, предшествующих последнему отрицательному элементу i-й линии (если все элементы линии неотрицательны, то возьмем bi = -l)
+     * @param randomNumbers
+     * @return
+     */
+    public static List<String> getSumAfterNegativeEl(int [][] randomNumbers){
         int row = randomNumbers.length;
         int col = randomNumbers[0].length;
         int positionNegativeEl = 0;
@@ -70,7 +82,12 @@ public class TASK2 {
         return SumAfterNegativeEl;
     }
 
-    public static List<String> getNumberRowNullElem(int [][] randomNumbers){ //  все элементы которых являются нулями
+    /**
+     *  все элементы которых являются нулями
+     * @param randomNumbers
+     * @return
+     */
+    public static List<String> getNumberRowNullElem(int [][] randomNumbers){
 
         int row = randomNumbers.length;
         int col = randomNumbers[0].length;
@@ -92,7 +109,12 @@ public class TASK2 {
         return zeroRow;
     }
 
-    public static List<String> getNumberRowSameElem(int [][] randomNumbers){ // елементи есть одинаковие
+    /**
+     *  елементи есть одинаковие
+     * @param randomNumbers
+     * @return
+     */
+    public static List<String> getNumberRowSameElem(int [][] randomNumbers){
         int row = randomNumbers.length;
         int col = randomNumbers[0].length;
         List<String> sameRow = new ArrayList<String>();

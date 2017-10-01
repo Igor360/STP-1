@@ -2,11 +2,21 @@ package array.task.answer;
 
 import java.util.Arrays;
 
+
+/**
+ * клас из решениям задания 1
+ */
 public class TASK1 {
 
     private TASK1(){}
 
-    public static int pairedNumber(int [] randomNumbers){ // метод которий повертает парние числа в масиве
+    /**
+     * метод которий повертает парние числа в масиве
+     * @param randomNumbers
+     * @return
+     */
+
+    public static int pairedNumber(int [] randomNumbers){
         if (randomNumbers.length > 0){
             int pairedNumbers = 0;
             Arrays.sort(randomNumbers);
@@ -23,8 +33,12 @@ public class TASK1 {
             return 0;
     }
 
-
-    public static int SumMultipliedElements(int [] randomNumbers){ // сума елементов умноженых на три
+    /**
+     * сума елементов умноженых на три
+     * @param randomNumbers
+     * @return
+     */
+    public static int SumMultipliedElements(int [] randomNumbers){
         if (randomNumbers.length > 0){
             int sumMultipliedEl = 0;
             int lengthArray = randomNumbers.length;
@@ -37,7 +51,13 @@ public class TASK1 {
             return 0;
     }
 
-    public static int DifferenceMaxMin(int[] randomNumber){ // разница межу максимальним и минимальним елементом
+    /**
+     *
+     * разница межу максимальним и минимальним елементом
+     * @param randomNumber
+     * @return
+     */
+    public static int DifferenceMaxMin(int[] randomNumber){
         if (randomNumber.length > 0){
             Arrays.sort(randomNumber);
             int maxElemrnt = randomNumber[randomNumber.length-1];
@@ -48,7 +68,13 @@ public class TASK1 {
             return 0;
     }
 
-    public static float ArithmeticMeanArray(int[] randomNumbers){ // середне ариметичне масива
+    /**
+     *  середне ариметичне масива
+     * @param randomNumbers
+     * @return
+     */
+
+    public static double ArithmeticMeanArray(int[] randomNumbers){
         if (randomNumbers.length > 0){
             int sumElements = 0;
             int numElements = randomNumbers.length;
@@ -60,7 +86,12 @@ public class TASK1 {
             return 0;
     }
 
-    public static int SumLargestAndSmallestElem(int[] randomNumbers){ // сума самых больших и наименьших элементов массива
+    /**
+     * сума самых больших и наименьших элементов массива
+     * @param randomNumbers
+     * @return
+     */
+    public static int SumLargestAndSmallestElem(int[] randomNumbers){
         if (randomNumbers.length > 0){
             Arrays.sort(randomNumbers);
             int sumMaxElements = 0;
@@ -87,7 +118,12 @@ public class TASK1 {
             return  0;
     }
 
-    public static int maximumModuleElem(int[] randomNumbers){ // максимальный элемент модуля массива
+    /**
+     * максимальный элемент модуля массива
+     * @param randomNumbers
+     * @return
+     */
+    public static int maximumModuleElem(int[] randomNumbers){
         if(randomNumbers.length > 0){
             int lengthArray = randomNumbers.length;
             for (int i = 0; i < lengthArray; i++)

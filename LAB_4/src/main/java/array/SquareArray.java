@@ -16,13 +16,18 @@ public class SquareArray {
         return arrayNumCol;
     }
 
+
+    /**
+     *
+     * @return number rows
+     */
     public int getNumberRow() {
         return arrayNumRow;
     }
 
     /**
      *
-     * @return array
+     * @return square array
      */
     public int[][] getArray() { return arrayElements; }
 
@@ -57,7 +62,7 @@ public class SquareArray {
 
     /**
      * method who return element array using her index
-     * @param position - position element
+     * @param row,col - position element
      * @return  retun element using her position
      */
 
@@ -67,7 +72,7 @@ public class SquareArray {
 
     /**
      * set data for element in array
-     * @param position element
+     * @param row, col -  position element
      * @param newData new value array element
      */
     public void setElement(int row, int col, int newData){
